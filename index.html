@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<style> 
+ form { 
+    color: white; 
+    } 
+body { 
+background: url('images/Frame 8.png') repeat; 
+} 
+h1 { 
+color: white; 
+} 
+
+p { 
+color: rebeccapurple; 
+} 
+h2 {
+
+    color: lightpink;
+
+}
+li {
+    color: white;
+}
+
+</style> 
+</head> 
+<body> 
+    <style>
+ #logoutButton {
+    text-align: left;
+    background-color: #7d04ee;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  p {
+        font-size: 24px;
+        font-weight: bold;
+        color: #7d04ee;
+        text-align: right;
+        margin: 0 0 20px;
+      }
+    
+</style>
+
+
+    </style>
+    <p >مرحباً بك، {{username}}! </p>
+    <button id="logoutButton" onclick="logout()">تسجيل الخروج</button>
+    <h1> اخدمني </h1> 
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>موقع اخدمني</title>
+    <link rel="stylesheet" href="style.css">
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="اخدمني">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية </a></li> 
+                <li><a href="products.html">المنتجات</a></li> 
+                <li><a href="login.html">تسجيل دخول</a></li> 
+                <li><a href="registration.html">تسجيل حساب</a></li> 
+                
+            </li>
+
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="products">
+            <h2>المنتجات</h2>
+        
+                <ul type="1"> 
+                    <li><a href="mobile-apps.html">تصميم وتطوير تطبيقات الهاتف المحمول</a></li> 
+                    <li><a href="web-development.html">تطوير مواقع الويب والأنظمة الإلكترونية</a></li> 
+                    <li><a href="product3.html">تطوير حلول الذكاء الاصطناعي وتعلم الآلة والتحليلات البيانية</a></li> 
+                    
+                </ul>
+        </section>
+     
+    <script>
+        // التحقق مما إذا كان المستخدم قد قام بتسجيل الدخول
+        var isLoggedIn = sessionStorage.getItem('isLoggedIn');
+        if (!isLoggedIn) {
+          // إذا لم يقم المستخدم بتسجيل الدخول، تحويله إلى صفحة تسجيل الدخول
+          window.location.href = 'login.html';
+        } else {
+          // إذا قام المستخدم بتسجيل الدخول، إظهار اسم المستخدم وزر تسجيل الخروج
+          var username = sessionStorage.getItem('username');
+          document.getElementsByTagName('p')[0].innerHTML = 'مرحباً بك، ' + username + '!';
+          document.getElementsByTagName('button')[0].style.display = 'block';
+        }
+        function logout() {
+  // تنفيذ الأوامر الخاصة بتسجيل الخروج هنا، مثل حذف الـ cookie أو تغيير قيمة الـ session
+  // يمكن استخدام sessionStorage لتخزين قيمة تحدد ما إذا كان المستخدم قام بتسجيل الدخول أم لا
+  sessionStorage.removeItem('isLoggedIn');
+  sessionStorage.removeItem('username');
+  
+  // عند الضغط على الزر، يتم إخفاء الزر بإضافة خاصية display: none
+  document.getElementById("logoutButton").style.display = "none";
+  
+  // تحويل المستخدم إلى صفحة تسجيل الدخول بعد تسجيل الخروج
+  window.location.href = 'index.html';
+}
+        
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

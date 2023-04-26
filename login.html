@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>صفحة تسجيل الدخول</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    
+    form {
+      background-color: #FFFFFF;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 18px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: none;
+      border-radius: 5px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+    }
+    
+    button[type="button"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #0077FF;
+      color: #FFFFFF;
+      font-size: 18px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form>
+    <h1 style="text-align: center;">تسجيل الدخول</h1>
+    <label for="username">اسم المستخدم:</label>
+    <input type="text" id="username" name="username">
+    <label for="password">كلمة المرور:</label>
+    <input type="password" id="password" name="password">
+    <button type="button" onclick="login()">تسجيل الدخول</button>
+  </form>
+  
+  <script>
+    function login() {
+      // تنفيذ الأوامر الخاصة بتسجيل الدخول هنا، مثل التحقق من اسم المستخدم وكلمة المرور
+      
+      // تخزين اسم المستخدم في sessionStorage
+      var username = document.getElementById('username').value;
+      sessionStorage.setItem('username', username);
+      
+      // تخزين معلومات حول حالة دخول المستخدم في sessionStorage
+      sessionStorage.setItem('isLoggedIn', true);
+      
+      // تحويل المستخدم إلى الصفحة الرئيسية بعد تسجيل الدخول
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
